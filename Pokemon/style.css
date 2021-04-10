@@ -1,0 +1,21 @@
+
+*{
+    background-color: cadetblue;
+}.poke{
+    display: inline-block;
+    width: 1000px;
+    margin-right: 20px;
+}
+.main{
+    display: inline-block;
+    justify-content: space-evenly;
+}
+.dis{
+    display: inline-block;
+    border: 5px solid red;
+    padding: 5px;
+    float: right;
+}
+img{
+    border: 1px solid blue;
+}
