@@ -1,58 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Test</title>
+    <head>
+        <meta charset="utf-8">
+        <title>Project</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <body>
+        <div class="gBackground">
+            <div class="pBackground">
+                <div class="header">
+                    <h1>How Are you Feeling Today?</h1>
+                </div>
+                <div class="content">
+                    <div class="API">
+                        <div class="hungry">
+                        </div>
+                        <div class="sad"></div>
+                    </div>
+                    
+                    <button id= "btnHun" ><img src="hungry.jpg"> Hungry</button>
 
-    <script>
-        $(document).ready(function(){
-            const settings = {
-	        "async": true,
-	        "crossDomain": true,
-	        "url": "https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random",
-	        "method": "GET",
-    	    "headers": {
-		    "accept": "application/json",
-		    "x-rapidapi-key": "9a0abae874msh2da2d3068725f2ep1a9982jsn114baac1ccb5",
-		    "x-rapidapi-host": "matchilling-chuck-norris-jokes-v1.p.rapidapi.com"
-	}
-    };
-        $.ajax(settings).done(function (response) {
-	    console.log(response);
-        console.log(response.icon_url);
-        $("body").append("<img src='" + response.icon_url + "'>");
-        $("body").append(response.value);
-    });
+                    <button id= "btnSad" ><img src="sad.png"> Sad</button>
+                </div>
+            </div>
 
-    const settings2 = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://edamam-food-and-grocery-database.p.rapidapi.com/parser?ingr=apple",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "9a0abae874msh2da2d3068725f2ep1a9982jsn114baac1ccb5",
-		"x-rapidapi-host": "edamam-food-and-grocery-database.p.rapidapi.com"
-	}
-};
+        </div>
+    </body>
 
-$.ajax(settings2).done(function (response) {
-	
-    $("body").append("<img src='" + response.hints[0].food.image + "'>")
-    $("body").append("<p> " + response.hints[0].food.label+ "<p>");
-    $("body").append("<p> " + response.hints[0].food.nutrients.CHOCDF+ "<p>");
-    
-    
-});
-
-});
-
-    </script>
-</head>
-<body>
-    
-</body>
 </html>
