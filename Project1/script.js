@@ -5,12 +5,12 @@ $(document).ready(function(){
         $(".sad").empty()
         $(".hungry").hide();
         $.get("https://api.chucknorris.io/jokes/random",function(response){
-        //console.log(response);
+    
         $(".sad").append("<img src='" + response.icon_url + "'>");
         $(".sad").append("<p id = 'pSad'>"+ response.value + "</p>");
         $(".sad").show();
         
-     });
+    });
     });
     
 
@@ -31,7 +31,7 @@ $(document).ready(function(){
 
 $.ajax(settings2).done(function (response) {
 
-    //console.log(response);
+
     var rand = Math.floor(Math.random() * (10 - 1 + 1) + 1); // random number between 1 - 10
     var src = response.hints[rand].food.image;
     if(src != null)
@@ -39,11 +39,11 @@ $.ajax(settings2).done(function (response) {
     else
         $(".hungry").append("<img src='Hungry1.png'>")
 
-    $(".hungry").append("<p id = 'pHun'> You can eat " + response.hints[rand].food.label+"  <br> Food Category: "
-    + response.hints[rand].food.category + " <br> <span> Calories: </span> "
-     + response.hints[rand].food.nutrients.ENERC_KCAL +  " <br> <span> Fat: </span> " +
-     response.hints[rand].food.nutrients.FAT + " <br> <span> Fiber: </span>"+ 
-     response.hints[rand].food.nutrients.FIBTG + " <br> <span> Protien: </span>"+ response.hints[rand].food.nutrients.PROCNT +"</p>");
+    $(".hungry").append("<p id = 'pHun'> You can eat " + response.hints[rand].food.label+"  <br> Food Category: " + 
+    response.hints[rand].food.category + " <br> <span> Calories: </span> " +
+    response.hints[rand].food.nutrients.ENERC_KCAL +  " <br> <span> Fat: </span> " +
+    response.hints[rand].food.nutrients.FAT + " <br> <span> Fiber: </span>"+ 
+    response.hints[rand].food.nutrients.FIBTG + " <br> <span> Protien: </span>"+ response.hints[rand].food.nutrients.PROCNT +"</p>");
     $(".hungry").show();
 
 
