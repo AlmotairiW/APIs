@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function() {
+            
+            var url = `http://api.openweathermap.org/data/2.5/weather?q=${$("#city").val()}
+            &appid=2902a3127e3e10952f0d6b6a2ef410be&units=imperial`;
+            
+            $.get(url, function(res) {
+            //console.log(res);
+            $(".content").append(`<h3> ${$("#city").val()} : ${res.weather[0].description} </h3>`);
+            $(".content").append(`<h3> Tempreture : ${res.main.temp} </h3>`);
+            $(".content").append(`<h3> Coord : ${res.coord.lat} , ${res.coord.lon} </h3>`)
+    
+            }, 'json');
+            return false;
+    });
+});
+    </script>
+</head>
+<body>
+    <div class="content">
+        <form action="#">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city">
+            <input type="submit" value="Submit Query">
+        </form>
+        
+</body>
+</html>
